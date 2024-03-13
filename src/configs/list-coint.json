@@ -1,0 +1,11 @@
+[
+  {"lable": "BNB-USDT", "value": "0x731A5AFB6e021579138Ea469B25C2ab46ff44199"},
+  {"lable": "BTC-USDT", "value": "0xE747418f2fe0F5794c5105f718b59b283E1B5e07"},
+  {"lable": "BUSD-USDT", "value": "0xc820F6E9ab1A9321d22720A0986088A9298563ed"},
+  {"lable": "DAI-USDT", "value": "0x219BAD3A896964A2B28Ef4dE6Ae6E6D72B646745"},
+  {"lable": "DOT-USDT", "value": "0x2b062807C6B3F8Ca5C366545d50aA19c114E9d7b"},
+  {"lable": "ETH-USDT", "value": "0xf1AF997ffA9b43CcA41078d74C3F897DB998e9bd"},
+  {"lable": "KLAY-USDT", "value": "0xf0d6Ccdd18B8A7108b901af872021109C27095bA"},
+  {"lable": "MATIC-USDT", "value": "0x7970d00F24e65F1BC757896e32Db820A8e9260F0"},
+  {"lable": "MNR-KRW", "value": "0x22ddDb9749cB5941DdEc5fD50B12CfDdB8E259c9"}
+]
