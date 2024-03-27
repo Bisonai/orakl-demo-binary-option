@@ -10,7 +10,7 @@ import {
 import { useAppDispatch, useAppSelector } from "../../reduxs/hooks";
 import { getToast } from "../../utils";
 import UserList from "./UserList";
-import CoinData from "../../configs/list-coint.json";
+import CoinData from "../../configs/list-coin.json";
 import { UpDownContract } from "../../contracts/UpDownContract";
 
 const DEFAULT_SECOND = 30;
