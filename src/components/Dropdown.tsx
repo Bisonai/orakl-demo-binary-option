@@ -44,7 +44,7 @@ function Dropdown({
     return item.lable;
   }, [selectedValue]);
 
-  const color = getText === placeholder ? "#BFBFBF" : "#000";
+  const color = getText === placeholder ? "#6a5809" : "#000";
 
   return (
     <Popover
@@ -57,7 +57,11 @@ function Dropdown({
         <Button variant={"primary"} w="full">
           <VStack>
             <Text color={color}>{getText}</Text>
-            {price !== undefined && <Text color="#999" fontSize="8px">Price: {numberFormat(price || 0)}</Text>     }
+            {price !== undefined && (
+              <Text color="#6a5809" fontSize="8px">
+                Price: {numberFormat(price || 0)}
+              </Text>
+            )}
           </VStack>
         </Button>
       </PopoverTrigger>

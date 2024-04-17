@@ -9,3 +9,6 @@ export const fonts = {
   NOTOSANS: "NotoSans-Bold",
   STATE_WIDE: "StateWide",
 };
+
+export const AGGREGATORS_URL =
+  "https://config.orakl.network/baobab_aggregators.json";

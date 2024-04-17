@@ -1,9 +1,9 @@
 import axios from "axios";
+import { AGGREGATORS_URL } from "../../configs/constants";
 
 export const getAggregators = async () => {
   try {
-    const url = "https://config.orakl.network/baobab_aggregators.json";
-    return (await axios.get(url)).data.result;
+    return (await axios.get(AGGREGATORS_URL)).data.result;
   } catch (ex) {
     console.error(ex);
   }
