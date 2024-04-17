@@ -10,8 +10,8 @@ import {
 import { useAppDispatch, useAppSelector } from "../../reduxs/hooks";
 import { getToast } from "../../utils";
 import UserList from "./UserList";
-import CoinData from "../../configs/list-coin.json";
 import { UpDownContract } from "../../contracts/UpDownContract";
+import { getAggregators } from "../../contracts/utils/addresses";
 
 const DEFAULT_SECOND = 30;
 
@@ -19,6 +19,7 @@ export default function UpDownContainer() {
   const dispatch = useAppDispatch();
   const [waiting, setWaiting] = useState<boolean>(false);
   const [countDown, setCountDown] = useState<number>(0);
+  const [coinData, setCoinData] = useState([]);
   const { walletInfo, web3Provider, point } = useAppSelector(
     (state) => state.account
   );
@@ -36,7 +37,7 @@ export default function UpDownContainer() {
         setPrice(rs.answer);
       }
     } catch (ex) {
-      console.log(ex);
+      console.error(ex);
     }
   }, [smAddress, web3Provider]);
 
@@ -44,7 +45,7 @@ export default function UpDownContainer() {
     if (web3Provider && smAddress) {
       const sm = new UpDownContract(web3Provider, smAddress);
       const rs = await sm.latestRoundDataAsync();
-      const name = CoinData.find((p) => p.value === smAddress)?.lable;
+      const name = coinData.find((p) => p.value === smAddress)?.lable;
       const isHigher = rs.answer > (price || -1);
       if (isHigher && headTail === UP_DOWN_TYPE.HEAD) {
         dispatch(startResultAction(5));
@@ -88,7 +89,7 @@ export default function UpDownContainer() {
           startAt: new Date(),
           price: rs.answer,
           yourPick: `${
-            CoinData.find((p) => p.value === smAddress)?.lable || ""
+            coinData.find((p) => p.value === smAddress)?.lable || ""
           } (${headTail === UP_DOWN_TYPE.HEAD ? "UP" : "DOWN"})`,
         })
       );
@@ -96,6 +97,18 @@ export default function UpDownContainer() {
       toast(getToast(er));
     }
   };
+
+  useEffect(async () => {
+    if (coinData.length) {
+      return;
+    }
+
+    const aggregators = await getAggregators();
+    aggregators.forEach((aggregator) => {
+      const { address, name } = aggregator;
+      coinData.push({ value: address, lable: name });
+    });
+  });
 
   useEffect(() => {
     if (countDown) {
@@ -127,7 +140,7 @@ export default function UpDownContainer() {
       >
         <VStack w={{ base: "100%", lg: "30%" }}>
           <Dropdown
-            data={CoinData}
+            data={coinData}
             price={price}
             selectedValue={smAddress}
             placeholder={"Select coin"}
