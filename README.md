@@ -3,8 +3,11 @@
 This repository contains a simple binary option game utilizing [Orakl Network Data Feeds](https://orakl.network/data-feed).
 Data feeds are deployed on Klaytn mainnet (Cypress) and testnet (Baobab), and this repository is compatible with both.
 
-## What is Binary Option Game?
+<div align="center">
+<img width="417" alt="image" src="https://github.com/Bisonai/orakl-demo-binary-option/assets/2312761/932c5d7b-b996-4a53-a964-12b4906fe676">
+</div>
 
+## What is Binary Option Game?
 
 "Binary Option" is a proof of concept betting game that utilizes price data submitted to [Orakl Network Data Feeds](https://docs.orakl.network/developers-guide/data-feed).
 Players start with 100 points, aiming to accurately predict the direction (up or down) of cryptocurrency price movement.
