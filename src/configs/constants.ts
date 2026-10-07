@@ -10,5 +10,7 @@ export const fonts = {
   STATE_WIDE: "StateWide",
 };
 
-export const AGGREGATORS_URL =
-  "https://config.orakl.network/baobab_aggregators.json";
+// Orakl Network FeedProxy on Kaia testnet (Kairos)
+export const FEEDS = [
+  { name: "BTC-USDT", address: "0x43add670a0e1948c90386d2b972fcaec6ce1be90" },
+];
