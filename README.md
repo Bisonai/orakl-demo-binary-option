@@ -1,7 +1,7 @@
 # Binary Option
 
 This repository contains a simple binary option game utilizing [Orakl Network Data Feeds](https://orakl.network/data-feed).
-Data feeds are deployed on Klaytn mainnet (Cypress) and testnet (Baobab), and this repository is compatible with both.
+Data feeds are deployed on Kaia mainnet and testnet (Kairos), and this repository is compatible with both.
 
 <div align="center">
 <img width="417" alt="image" src="https://github.com/Bisonai/orakl-demo-binary-option/assets/2312761/932c5d7b-b996-4a53-a964-12b4906fe676">
