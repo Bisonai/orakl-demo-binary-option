@@ -2,9 +2,7 @@ import { UP_DOWN_TYPE } from "../contracts/types";
 
 export interface ILatestRound {
   answer: number;
-  answeredInRound: number;
   roundId: number;
-  startedAt: number;
   updatedAt: number;
 }
 

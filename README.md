@@ -1,7 +1,7 @@
 # Binary Option
 
 This repository contains a simple binary option game utilizing [Orakl Network Data Feeds](https://orakl.network/data-feed).
-Data feeds are deployed on Klaytn mainnet (Cypress) and testnet (Baobab), and this repository is compatible with both.
+Data feeds are deployed on Kaia mainnet and testnet (Kairos), and this repository is compatible with both.
 
 <div align="center">
 <img width="417" alt="image" src="https://github.com/Bisonai/orakl-demo-binary-option/assets/2312761/932c5d7b-b996-4a53-a964-12b4906fe676">
@@ -14,7 +14,8 @@ Players start with 100 points, aiming to accurately predict the direction (up or
 
 Correct predictions earn players 5 points, while incorrect ones result in a loss of 5 points.
 Asset prices are fetched from the [Aggregator smart contract](https://docs.orakl.network/developers-guide/data-feed#read-data) and compared with the same asset's price after 30 seconds.
-Users can select any supported data feed to participate in the game.
+The demo reads the BTC-USDT feed on Kaia testnet (Kairos), so connect your wallet to Kairos.
+Feed address is set in [constants.ts](src/configs/constants.ts).
 
 ## Development
 
